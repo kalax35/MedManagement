@@ -4,53 +4,53 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="text-align:center;">Create</h1>
 
-<h4>Doctor</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin:auto;">
+        
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DoctorName" class="control-label"></label>
+                <label asp-for="DoctorName" class="control-label">Doctor name</label>
                 <input asp-for="DoctorName" class="form-control" />
                 <span asp-validation-for="DoctorName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorSurname" class="control-label"></label>
+                <label asp-for="DoctorSurname" class="control-label">Doctor surname</label>
                 <input asp-for="DoctorSurname" class="form-control" />
                 <span asp-validation-for="DoctorSurname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorPhoto" class="control-label"></label>
+                <label asp-for="DoctorPhoto" class="control-label">Photo (adress)</label>
                 <input asp-for="DoctorPhoto" class="form-control" />
                 <span asp-validation-for="DoctorPhoto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorMedicalSpecialization" class="control-label"></label>
+                <label asp-for="DoctorMedicalSpecialization" class="control-label">Doctor Medical Specialization</label>
                 <input asp-for="DoctorMedicalSpecialization" class="form-control" />
                 <span asp-validation-for="DoctorMedicalSpecialization" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorAboutMe" class="control-label"></label>
+                <label asp-for="DoctorAboutMe" class="control-label">About</label>
                 <input asp-for="DoctorAboutMe" class="form-control" />
                 <span asp-validation-for="DoctorAboutMe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorPhone" class="control-label"></label>
+                <label asp-for="DoctorPhone" class="control-label">Phone</label>
                 <input asp-for="DoctorPhone" class="form-control" />
                 <span asp-validation-for="DoctorPhone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div style="text-align:center; padding-top: 20px;" class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="text-align:center; padding-top: 20px;">
+    <a type="button" class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -58,12 +58,11 @@ namespace MedManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DiseasesTreatedID,Name,DoctorId")] DiseasesTreated diseasesTreated)
         {
-            if (ModelState.IsValid)
-            {
+
                 _context.Add(diseasesTreated);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+
             ViewData["DoctorId"] = new SelectList(_context.Doctor, "DoctorID", "DoctorName", diseasesTreated.DoctorId);
             return View(diseasesTreated);
         }
