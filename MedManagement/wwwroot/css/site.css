@@ -18,5 +18,98 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #e3f2fd !important;
+}
+
+.navbar {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.nav-link{
+    color: white;
+}
+
+.navbar > .active > a {
+    color: aqua;
+    background-color: chartreuse;
+}
+
+.nav-item > a:hover {
+    color: #e3f2fd !important;
+}
+
+#page-container {
+    position: relative;
+    min-height: 80vh;
+}
+
+#content-wrap {
+    padding-bottom: 1.5rem;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+
+/*-----Home cards -------*/
+
+.wrimagecard {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+    .wrimagecard .fa {
+        position: relative;
+        font-size: 70px;
+    }
+
+.wrimagecard-topimage_header {
+    padding: 20px;
+    height: 150px;
+    display:flex;
+    align-content:center;
+    align-items: center;
+    justify-content:center;
+}
+
+a.wrimagecard:hover, .wrimagecard-topimage:hover {
+    box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+}
+
+.wrimagecard-topimage a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wrimagecard-topimage_title {
+    padding: 20px 24px;
+    height: 80px;
+    padding-bottom: 0.75rem;
+    position: relative;
+    text-align:center;
+
+}
+
+    .wrimagecard-topimage a {
+        border-bottom: none;
+        text-decoration: none;
+        color: #525c65;
+        transition: color 0.3s ease;
+    }
+
+.wrimagecard-topimage_header i {
+    font-size: 60px;
 }
