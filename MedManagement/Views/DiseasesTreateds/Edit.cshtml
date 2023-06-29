@@ -4,12 +4,10 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>DiseasesTreated</h4>
+<h1 style="text-align:center;">Edit</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin:auto;">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DiseasesTreatedID" />
@@ -19,19 +17,19 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorId" class="control-label"></label>
+                <label asp-for="DoctorId" class="control-label">Doctor Name</label>
                 <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
                 <span asp-validation-for="DoctorId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div style="text-align:center; padding-top: 20px;" class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="text-align:center; padding-top: 20px;">
+    <a type="button" class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

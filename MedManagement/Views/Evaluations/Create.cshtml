@@ -4,41 +4,40 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="text-align:center;">Create</h1>
 
-<h4>Evaluation</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin:auto;">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EvaluationValue" class="control-label"></label>
+                <label asp-for="EvaluationValue" class="control-label">Evaluation Value</label>
                 <input asp-for="EvaluationValue" class="form-control" />
                 <span asp-validation-for="EvaluationValue" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EvaluationDesctyption" class="control-label"></label>
+                <label asp-for="EvaluationDesctyption" class="control-label">Evaluation Descryption</label>
                 <input asp-for="EvaluationDesctyption" class="form-control" />
                 <span asp-validation-for="EvaluationDesctyption" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DoctorId" class="control-label"></label>
+                <label asp-for="DoctorId" class="control-label">Doctor Id</label>
                 <select asp-for="DoctorId" class ="form-control" asp-items="ViewBag.DoctorId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="PatientId" class="control-label"></label>
+                <label asp-for="PatientId" class="control-label">Patient Id</label>
                 <select asp-for="PatientId" class ="form-control" asp-items="ViewBag.PatientId"></select>
             </div>
-            <div class="form-group">
+            <div style="text-align:center; padding-top: 20px;" class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="text-align:center; padding-top: 20px;">
+    <a type="button" class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

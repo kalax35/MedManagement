@@ -60,7 +60,7 @@ namespace MedManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EvaluationID,EvaluationValue,EvaluationDesctyption,DoctorId,PatientId")] Evaluation evaluation)
         {
-            if (ModelState.IsValid)
+           // if (ModelState.IsValid)
             {
                 _context.Add(evaluation);
                 await _context.SaveChangesAsync();

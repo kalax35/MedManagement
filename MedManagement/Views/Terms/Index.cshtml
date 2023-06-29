@@ -4,25 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="text-align:center">Terms</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="text-align: right">
+    <a type="button" class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
+                Created Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastUpdatedOn)
+                Last Updated On
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsBusy)
+                Is Busy
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MedicalFacility)
+                Medical Facility
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Doctor)
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Doctor.DoctorName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TermsID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TermsID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TermsID">Delete</a>
+                    <a type="button" class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.TermsID">Edit</a> 
+                    <a type="button" class="btn btn-info" asp-action="Details" asp-route-id="@item.TermsID">Details</a> 
+                    <a type="button" class="btn btn-dark" asp-action="Delete" asp-route-id="@item.TermsID">Delete</a>
             </td>
         </tr>
 }

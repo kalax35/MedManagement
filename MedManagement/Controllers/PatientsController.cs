@@ -83,6 +83,7 @@ namespace MedManagement.Controllers
             {
                 return NotFound();
             }
+            ViewData["PatientType"] = new SelectList(_context.Patient, "PatientType", "PatientType", patient.PatientType);
             return View(patient);
         }
 
@@ -118,6 +119,7 @@ namespace MedManagement.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PatientType"] = new SelectList(_context.Patient, "PatientType", "PatientType", patient.PatientType);
             return View(patient);
         }
 

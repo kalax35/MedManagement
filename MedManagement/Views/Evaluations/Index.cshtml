@@ -4,19 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="text-align:center">Evaluations</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<p style="text-align: right">
+    <a type="button" class="btn btn-primary" asp-action="Create">Create New</a>
+</p> 
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EvaluationValue)
+                Evaluation Value
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EvaluationDesctyption)
+                Evaluation Desctyption
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Doctor)
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Patient.PatientID)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EvaluationID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EvaluationID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EvaluationID">Delete</a>
+                    <a type="button" class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.EvaluationID">Edit</a> 
+                    <a type="button" class="btn btn-info" asp-action="Details" asp-route-id="@item.EvaluationID">Details</a> 
+                    <a type="button" class="btn btn-dark" asp-action="Delete" asp-route-id="@item.EvaluationID">Delete</a>
             </td>
         </tr>
 }
