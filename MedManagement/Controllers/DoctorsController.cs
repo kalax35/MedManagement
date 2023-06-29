@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MedManagement.Data;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace MedManagement.Controllers
 {
@@ -20,6 +22,7 @@ namespace MedManagement.Controllers
         }
 
         // GET: Doctors
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
               return _context.Doctor != null ? 
