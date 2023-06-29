@@ -41,7 +41,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("DiseasesTreated");
+                    b.ToTable("DiseasesTreated", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.Doctor", b =>
@@ -83,7 +83,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("MedicalFacilityId");
 
-                    b.ToTable("Doctor");
+                    b.ToTable("Doctor", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.DoctorMedicalFacility", b =>
@@ -106,7 +106,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("MedicalFacilityId");
 
-                    b.ToTable("DoctorMedicalFacility");
+                    b.ToTable("DoctorMedicalFacility", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.Evaluation", b =>
@@ -135,7 +135,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Evaluation");
+                    b.ToTable("Evaluation", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.MedicalFacility", b =>
@@ -168,7 +168,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MedicalFacility");
+                    b.ToTable("MedicalFacility", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.Patient", b =>
@@ -195,7 +195,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasKey("PatientID");
 
-                    b.ToTable("Patient");
+                    b.ToTable("Patient", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.Service", b =>
@@ -224,7 +224,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Service");
+                    b.ToTable("Service", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.Terms", b =>
@@ -256,7 +256,7 @@ namespace MedManagement.Data.Migrations
 
                     b.HasIndex("MedicalFacilityId");
 
-                    b.ToTable("Terms");
+                    b.ToTable("Terms", (string)null);
                 });
 
             modelBuilder.Entity("MedManagement.Data.User", b =>
