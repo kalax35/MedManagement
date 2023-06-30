@@ -1,13 +1,12 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-@if (User.IsInRole("Lekarz"))
+@if (User.IsInRole("Doctor"))
 {
     <div class="container-fluid">
-    <div class="row">
-                <div class="col-md-3 col-sm-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
                 <div class="wrimagecard wrimagecard-topimage">
                     <a asp-area="" asp-controller="Evaluations" asp-action="Index">
                         <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
@@ -22,55 +21,13 @@
                     </a>
                 </div>
             </div>
-            </div>
-            </div>
-}
-else {
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 col-sm-4">
-            <div class="wrimagecard wrimagecard-topimage">
-                <a asp-area="" asp-controller="Doctors" asp-action="Index">
-                    <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8  ">
-                        <center><i class="fas fa-briefcase-medical" style="color:#0d6efd"></i></center>
-                    </div>
-                    <div class="wrimagecard-topimage_title">
-                        <h5>
-                            Doctors
-                        </h5>
-                    </div>
-                </a>
-            </div>
         </div>
-        <div class="col-md-3 col-sm-4">
-            <div class="wrimagecard wrimagecard-topimage">
-                <a asp-area="" asp-controller="DoctorMedicalFacilities" asp-action="Index">
-                    <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
-                        <center><i class="fas fa-dna" style="color:#0d6efd"></i></center>
-                    </div>
-                    <div class="wrimagecard-topimage_title">
-                        <h5>
-                            Doctor Medical Facilities
-                        </h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-4">
-            <div class="wrimagecard wrimagecard-topimage">
-                <a asp-area="" asp-controller="MedicalFacilities" asp-action="Index">
-                    <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
-                        <center><i class="fas fa-clinic-medical" style="color:#0d6efd"></i></center>
-                    </div>
-                    <div class="wrimagecard-topimage_title">
-                        <h5>
-                            Medical Facilities
-                        </h5>
-                    </div>
+    </div>
 
-                </a>
-            </div>
-        </div>
+}
+else if (User.IsInRole("Recorder"))
+{
+    <div class="row">
         <div class="col-md-3 col-sm-4">
             <div class="wrimagecard wrimagecard-topimage">
                 <a asp-area="" asp-controller="Terms" asp-action="Index">
@@ -101,35 +58,114 @@ else {
                 </a>
             </div>
         </div>
-        <div class="col-md-3 col-sm-4">
-            <div class="wrimagecard wrimagecard-topimage">
-                <a asp-area="" asp-controller="Evaluations" asp-action="Index">
-                    <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
-                        <center><i class="fas fa-syringe" style="color:#0d6efd"></i></center>
-                    </div>
-                    <div class="wrimagecard-topimage_title">
-                        <h5>
-                            Evaluations
-                        </h5>
-                    </div>
+    </div>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="Doctors" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8  ">
+                            <center><i class="fas fa-briefcase-medical" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Doctors
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="DoctorMedicalFacilities" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-dna" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Doctor Medical Facilities
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="MedicalFacilities" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-clinic-medical" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Medical Facilities
+                            </h5>
+                        </div>
 
-                </a>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-4">
-            <div class="wrimagecard wrimagecard-topimage">
-                <a asp-area="" asp-controller="Services" asp-action="Index">
-                    <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
-                        <center><i class="fas fa-book-medical" style="color:#0d6efd"></i></center>
-                    </div>
-                    <div class="wrimagecard-topimage_title">
-                        <h5>
-                            Services
-                        </h5>
-                    </div>
-                </a>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="Terms" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-calendar" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Terms
+                            </h5>
+                        </div>
+
+                    </a>
+                </div>
             </div>
-        </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="Patients" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-id-card-alt" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Patients
+                            </h5>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="Evaluations" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-syringe" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Evaluations
+                            </h5>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
+                    <a asp-area="" asp-controller="Services" asp-action="Index">
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="fas fa-book-medical" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                Services
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <div class="col-md-3 col-sm-4">
                 <div class="wrimagecard wrimagecard-topimage">
                     <a asp-area="" asp-controller="DiseasesTreateds" asp-action="Index">
@@ -144,20 +180,20 @@ else {
                     </a>
                 </div>
             </div>
-                            <div class="col-md-3 col-sm-4">
-                    <div class="wrimagecard wrimagecard-topimage">
+            <div class="col-md-3 col-sm-4">
+                <div class="wrimagecard wrimagecard-topimage">
                     <a asp-area="" asp-controller="Roles" asp-action="Index">
-                            <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
-                                <center><i class="	fas fa-user" style="color:#0d6efd"></i></center>
-                            </div>
-                            <div class="wrimagecard-topimage_title">
-                                <h5>
-                                    User roles
-                                </h5>
-                            </div>
-                        </a>
-                    </div>
+                        <div class="wrimagecard-topimage_header" style="background-color:#f8f8f8 ">
+                            <center><i class="	fas fa-user" style="color:#0d6efd"></i></center>
+                        </div>
+                        <div class="wrimagecard-topimage_title">
+                            <h5>
+                                User roles
+                            </h5>
+                        </div>
+                    </a>
                 </div>
+            </div>
+        </div>
     </div>
-</div>
 }

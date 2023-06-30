@@ -6,8 +6,8 @@ namespace MedManagement.Data
     {
         public int EvaluationID { get; set; }
         [Required]
-        public int EvaluationValue { get; set; }
-        public int EvaluationDesctyption { get; set; }
+        public string EvaluationValue { get; set; }
+        public string EvaluationDesctyption { get; set; }
         //
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }

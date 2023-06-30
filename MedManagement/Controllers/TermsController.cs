@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MedManagement.Data;
+using System.Security.Claims;
 
 namespace MedManagement.Controllers
 {
@@ -20,7 +21,7 @@ namespace MedManagement.Controllers
 
         // GET: Terms
         public async Task<IActionResult> Index()
-        {
+        {           
             var applicationDbContext = _context.Terms.Include(t => t.Doctor).Include(t => t.MedicalFacility);
             return View(await applicationDbContext.ToListAsync());
         }

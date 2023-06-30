@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MedManagement.Data;
+using System.Security.Claims;
 
 namespace MedManagement.Controllers
 {
