@@ -101,11 +101,17 @@ namespace MedManagement.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+           // if (ModelState.IsValid)
             {
+                var eDb = await _context.Evaluation.FindAsync(id);
                 try
                 {
-                    _context.Update(evaluation);
+                    eDb.EvaluationValue = evaluation.EvaluationValue;
+                    eDb.EvaluationDesctyption = evaluation.EvaluationDesctyption;
+                    eDb.DoctorId = evaluation.DoctorId;
+                    eDb.PatientId = evaluation.PatientId;
+
+                    _context.Update(eDb);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

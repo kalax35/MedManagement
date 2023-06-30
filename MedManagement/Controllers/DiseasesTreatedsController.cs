@@ -96,11 +96,16 @@ namespace MedManagement.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
+                var tdtDb = await _context.DiseasesTreated.FindAsync(id);
                 try
                 {
-                    _context.Update(diseasesTreated);
+                    tdtDb.Name = diseasesTreated.Name;
+                    tdtDb.DoctorId = diseasesTreated.DoctorId;
+
+
+                    _context.Update(tdtDb);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

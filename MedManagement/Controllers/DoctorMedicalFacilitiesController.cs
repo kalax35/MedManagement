@@ -101,11 +101,15 @@ namespace MedManagement.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+           // if (ModelState.IsValid)
             {
+                var dmftDb = await _context.DoctorMedicalFacility.FindAsync(id);
                 try
                 {
-                    _context.Update(doctorMedicalFacility);
+                    dmftDb.DoctorId = doctorMedicalFacility.DoctorId;
+                    dmftDb.MedicalFacilityId = doctorMedicalFacility.MedicalFacilityId;
+
+                    _context.Update(dmftDb);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
